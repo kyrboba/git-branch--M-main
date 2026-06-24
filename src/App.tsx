@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Menu, X, MapPin, Clock, Phone, Instagram, Coffee, ChevronRight, Star, ArrowUp } from 'lucide-react';
 
 const LOGO = '/images/logo.jpg';
-const STOREFRONT = '/images/image.png';
+const STOREFRONT = '/images/last.jpg';
 const CAFE_PHOTO = '/images/interior.jpg';
 
 function useInView(threshold = 0.12) {
