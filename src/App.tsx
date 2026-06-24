@@ -3,7 +3,7 @@ import { Menu, X, MapPin, Clock, Phone, Instagram, Coffee, ChevronRight, Star, A
 
 const LOGO = '/images/logo.jpg';
 const STOREFRONT = '/images/image.png';
-const CAFE_PHOTO = '/images/354553575_1000765131104147_3305940321509333321_n.jpg';
+const CAFE_PHOTO = '/images/interior.jpg';
 
 function useInView(threshold = 0.12) {
   const ref = useRef<HTMLDivElement>(null);
