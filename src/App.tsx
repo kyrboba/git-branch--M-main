@@ -4,7 +4,7 @@ import { Menu, X, MapPin, Clock, Phone, Instagram, Coffee, ChevronRight, Star, A
 const LOGO = '/images/logo.jpg';
 const STOREFRONT = '/images/last.jpg';
 const CAFE_PHOTO = '/images/interior.jpg';
-const FIRST_CARD_PHOTO = '/images/image copy copy.png';
+const FIRST_CARD_PHOTO = '/images/image copy photo.jpg';
 
 function useInView(threshold = 0.12) {
   const ref = useRef<HTMLDivElement>(null);
