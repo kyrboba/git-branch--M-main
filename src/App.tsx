@@ -4,6 +4,7 @@ import { Menu, X, MapPin, Clock, Phone, Instagram, Coffee, ChevronRight, Star, A
 const LOGO = '/images/logo.jpg';
 const STOREFRONT = '/images/last.jpg';
 const CAFE_PHOTO = '/images/interior.jpg';
+const FIRST_CARD_PHOTO = '/images/image copy copy.png';
 
 function useInView(threshold = 0.12) {
   const ref = useRef<HTMLDivElement>(null);
@@ -277,7 +278,7 @@ function App() {
             {/* Storefront night */}
             <div className="relative rounded-2xl overflow-hidden group aspect-[4/5] md:aspect-auto md:h-80">
               <img
-                src={STOREFRONT}
+                src={FIRST_CARD_PHOTO}
                 alt="Fiord Coffee – intrarea de noapte"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
