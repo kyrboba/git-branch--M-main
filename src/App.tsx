@@ -48,10 +48,10 @@ function App() {
   };
 
   const menuCategories = {
-    black: { label: 'Negru', dot: 'bg-forest-900', items: [{ name: 'Espresso', price: '25', desc: 'Ristretto intens și aromatic' }, { name: 'Doppio Espresso', price: '35', desc: 'Shot dublu' }, { name: 'Americano', price: '30', desc: 'Espresso diluat' }, { name: 'Long Black', price: '30', desc: 'Espresso și apă' }, { name: 'Filtru', price: '35', desc: 'Single origin' }] },
-    white: { label: 'Alb', dot: 'bg-wood-500', items: [{ name: 'Cappuccino', price: '40', desc: 'Espresso și lapte' }, { name: 'Flat White', price: '40', desc: 'Microspumă catifelată' }, { name: 'Latte', price: '40', desc: 'Espresso și lapte aburi' }, { name: 'Cortado', price: '35', desc: 'Espresso și lapte' }, { name: 'Mocha', price: '45', desc: 'Espresso și ciocolată' }, { name: 'Latte Caramel', price: '45', desc: 'Caramel și lapte' }] },
-    cold: { label: 'Reci', dot: 'bg-forest-600', items: [{ name: 'Americano cu Gheață', price: '35', desc: 'Espresso peste gheață' }, { name: 'Latte cu Gheață', price: '45', desc: 'Lapte și espresso' }, { name: 'Cold Brew', price: '45', desc: 'Infuzat 18 ore' }, { name: 'Mocha cu Gheață', price: '50', desc: 'Ciocolată și espresso' }, { name: 'Affogato', price: '55', desc: 'Espresso și înghețată' }] },
-    tea: { label: 'Ceai', dot: 'bg-forest-400', items: [{ name: 'Earl Grey', price: '25', desc: 'Ceai negru cu bergamotă' }, { name: 'Ceai Verde', price: '25', desc: 'Delicat' }, { name: 'Chai Latte', price: '40', desc: 'Ceai condimentat' }, { name: 'Matcha Latte', price: '45', desc: 'Matcha premium' }, { name: 'Ceai de Plante', price: '25', desc: 'Botanic' }] },
+    black: { label: 'Negru', dot: 'bg-forest-900', items: [{ name: 'Espresso', price: '25', desc: 'Ristretto intens și aromatic, shot unic' }, { name: 'Doppio Espresso', price: '35', desc: 'Shot dublu pentru o aromă profundă' }, { name: 'Americano', price: '30', desc: 'Espresso diluat cu apă fierbinte' }, { name: 'Long Black', price: '30', desc: 'Apă fierbinte peste espresso, mai multă cremă' }, { name: 'Filtru', price: '35', desc: 'Single origin, metodă pour-over' }] },
+    white: { label: 'Alb', dot: 'bg-wood-500', items: [{ name: 'Cappuccino', price: '40', desc: 'Espresso, lapte și spumă în proporții egale' }, { name: 'Flat White', price: '40', desc: 'Microspumă catifelată, gust puternic de cafea' }, { name: 'Latte', price: '40', desc: 'Espresso fin cu lapte aburi' }, { name: 'Cortado', price: '35', desc: 'Espresso tăiat cu lapte cald' }, { name: 'Mocha', price: '45', desc: 'Espresso, ciocolată și lapte aburi' }, { name: 'Latte Caramel', price: '45', desc: 'Caramel dulce cu lapte mătăsos' }] },
+    cold: { label: 'Reci', dot: 'bg-forest-600', items: [{ name: 'Americano cu Gheață', price: '35', desc: 'Espresso rece peste gheață' }, { name: 'Latte cu Gheață', price: '45', desc: 'Lapte rece și espresso perfect' }, { name: 'Cold Brew', price: '45', desc: 'Infuzat 18 ore, fin și răcoritor' }, { name: 'Mocha cu Gheață', price: '50', desc: 'Ciocolată, espresso și gheață' }, { name: 'Affogato', price: '55', desc: 'Espresso fierbinte peste înghețată' }] },
+    tea: { label: 'Ceai', dot: 'bg-forest-400', items: [{ name: 'Earl Grey', price: '25', desc: 'Ceai negru clasic cu bergamotă' }, { name: 'Ceai Verde', price: '25', desc: 'Delicat și bogat în antioxidanți' }, { name: 'Chai Latte', price: '40', desc: 'Ceai condimentat cu lapte aburi' }, { name: 'Matcha Latte', price: '45', desc: 'Matcha premium japonez' }, { name: 'Ceai de Plante', price: '25', desc: 'Amestec botanic fără cafeină' }] },
   };
 
   const heroRef = useInView(0.1);
@@ -62,6 +62,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-cream-50 font-sans">
+      {/* Navigation - L-am curățat de logo */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-cream-50/96 backdrop-blur-md shadow-sm' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="hidden md:flex items-center gap-8 ml-auto">
@@ -77,6 +78,7 @@ function App() {
         </div>
       </nav>
 
+      {/* Hero */}
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1920')" }} />
         <div className="absolute inset-0 bg-gradient-to-b from-forest-950/70 via-forest-900/55 to-forest-950/80" />
@@ -92,22 +94,55 @@ function App() {
           </div>
           <p className="text-forest-400 text-sm tracking-[0.3em] uppercase mb-3 font-medium">Cafea Specialty · Chișinău</p>
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-cream-50 mb-4 leading-tight">Fiord Coffee</h1>
-          <button onClick={() => scrollTo('menu')} className="bg-forest-600 hover:bg-forest-500 text-cream-50 px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 shadow-lg">Explorează Meniul</button>
+          <button onClick={() => scrollTo('menu')} className="inline-flex items-center justify-center gap-3 bg-forest-600 hover:bg-forest-500 text-cream-50 px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 shadow-lg">
+            <Coffee size={20} /> Explorează Meniul
+          </button>
         </div>
       </section>
 
-      <section className="bg-forest-950"><div className="max-w-7xl mx-auto px-6 py-10"><div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {[FIRST_CARD_PHOTO, CAFE_PHOTO].map((img, i) => (<div key={i} className="relative rounded-2xl overflow-hidden group aspect-[4/5] md:h-80"><img src={img} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/></div>))}
-        <div className="relative rounded-2xl overflow-hidden group bg-forest-800 flex items-center justify-center md:h-80"><img src={LOGO} className="w-40 h-40 rounded-full object-contain bg-white p-3 shadow-2xl"/></div>
-      </div></div></section>
-
-      <section id="menu" className="py-20 bg-cream-50"><div className="max-w-7xl mx-auto px-6"><div className="text-center mb-12"><h2 className="font-serif text-4xl text-forest-900">Meniul Nostru</h2></div>
-        <div className="grid sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
-            {menuCategories[activeMenuTab].items.map((item) => (<div key={item.name} className="flex justify-between bg-white p-5 rounded-2xl shadow-sm"><div><h4 className="font-medium text-forest-800">{item.name}</h4><p className="text-forest-500 text-sm">{item.desc}</p></div><span className="text-forest-700 font-semibold">{item.price} lei</span></div>))}
+      {/* Photo Strip */}
+      <section className="bg-forest-950">
+        <div className="max-w-7xl mx-auto px-6 py-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="relative rounded-2xl overflow-hidden group aspect-[4/5] md:h-80"><img src={FIRST_CARD_PHOTO} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/></div>
+            <div className="relative rounded-2xl overflow-hidden group aspect-[4/5] md:h-80"><img src={CAFE_PHOTO} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/></div>
+            <div className="relative rounded-2xl overflow-hidden group bg-forest-800 flex items-center justify-center md:h-80"><img src={LOGO} className="w-40 h-40 rounded-full object-contain bg-white p-3 shadow-2xl"/></div>
+          </div>
         </div>
-      </div></section>
+      </section>
 
-      <footer className="bg-forest-950 py-12 text-center text-forest-600 text-sm">© 2024 Fiord Coffee</footer>
+      {/* Menu */}
+      <section id="menu" className="py-20 bg-cream-50">
+        <div ref={menuRef.ref} className="max-w-7xl mx-auto px-6">
+          <h2 className="font-serif text-4xl text-center text-forest-900 mb-12">Meniul Nostru</h2>
+          <div className="flex justify-center mb-10 gap-2 flex-wrap">
+            {(Object.keys(menuCategories) as Array<keyof typeof menuCategories>).map((key) => (
+              <button key={key} onClick={() => setActiveMenuTab(key)} className={`px-6 py-2 rounded-full ${activeMenuTab === key ? 'bg-forest-700 text-white' : 'bg-forest-100'}`}>{menuCategories[key].label}</button>
+            ))}
+          </div>
+          <div className="grid sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
+            {menuCategories[activeMenuTab].items.map((item) => (
+              <div key={item.name} className="flex justify-between bg-white p-5 rounded-2xl shadow-sm">
+                <div><h4 className="font-medium text-forest-800">{item.name}</h4><p className="text-forest-500 text-sm">{item.desc}</p></div>
+                <span className="text-forest-700 font-semibold">{item.price} lei</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About */}
+      <section id="about" className="py-20 bg-forest-800 text-white">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="font-serif text-4xl mb-6">Despre Noi</h2>
+          <p className="text-lg leading-relaxed">Fiord Coffee a fost fondată în 2016. Ne inspirăm din natura nordică și oferim cafea de cea mai bună calitate în inima orașului Chișinău.</p>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-forest-950 py-12 text-center text-forest-600">
+        <p>© 2024 Fiord Coffee · str. Alexandru Vlahuta 1A</p>
+      </footer>
     </div>
   );
 }
