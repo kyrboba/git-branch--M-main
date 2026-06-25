@@ -231,7 +231,7 @@ function App() {
             <img
               src={LOGO}
               alt="Fiord Coffee"
-              className="w48 h-48 rounded-full object-contain bg-white/90 p-2 shadow-2xl ring-2 ring-cream-200/30"
+              className="w-28 h-28 rounded-full object-contain bg-white/90 p-2 shadow-2xl ring-2 ring-cream-200/30"
             />
           </div>
           <p className="text-forest-400 text-sm tracking-[0.3em] uppercase mb-3 font-medium">
